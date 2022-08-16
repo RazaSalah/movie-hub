@@ -7,6 +7,7 @@ import Genres from "../../components/Genres/Genres.js";
 
 function Movies() {
   const [page, setPage] = React.useState(1);
+  // the data will be received in array format
   const [content, setContent] = React.useState([]);
   const [numOfPage, setNumOfPage] = React.useState();
   const [genres, setGenres] = React.useState([]);
@@ -18,7 +19,7 @@ function Movies() {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&include_video=false&sort_by=popularity.desc&page=${page}`
     );
-    console.log(data);
+    console.log(data.results);
     setContent(data.results);
     setNumOfPage(data.total_pages);
   };

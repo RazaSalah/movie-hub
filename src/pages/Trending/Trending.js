@@ -15,7 +15,7 @@ function Trending() {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/trending/all/week?api_key=${API_KEY}&page=${page}`
     );
-    console.log(data.results);
+    // console.log(data.results);
     setContent(data.results);
   };
 
