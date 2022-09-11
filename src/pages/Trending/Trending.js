@@ -1,7 +1,6 @@
 import * as React from "react";
 import axios from "axios";
 import "./Trending.css";
-
 import SingleContent from "../../components/SingleContent/SingleContent";
 import CustomPagination from "../../components/Pagination/CustomPagination";
 

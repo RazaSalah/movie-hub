@@ -14,14 +14,14 @@ function Movies() {
   const [genres, setGenres] = React.useState([]);
   const [selectedGenres, setSelectedGenres] = React.useState([]);
   const genresURL = useGenres(selectedGenres);
-  console.log(selectedGenres);
+  // console.log(selectedGenres);
   const API_KEY = "bd95210b0fc359499095f827f48634cf";
 
   const fetchMovies = async () => {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&include_adult=false&include_video=false&sort_by=popularity.desc&page=${page}&with_genres=${genresURL}`
     );
-    // console.log(data.results);
+    console.log(data.results);
     setContent(data.results);
     setNumOfPage(data.total_pages);
   };
@@ -53,7 +53,7 @@ function Movies() {
               poster={m.poster_path}
               vote_average={m.vote_average}
               release_date={m.release_date || m.first_air_date}
-              media_type={m.media_type}
+              media_type="movie"
             />
           ))}
       </div>
